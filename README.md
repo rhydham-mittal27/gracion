@@ -17,16 +17,17 @@ fix.
 
 ## Results
 
-Measured, not estimated, methodology and code intentionally not included:
+In internal testing, the zone-based layout consistently stored records
+more compactly than raw JSON once past a small fixed overhead at very low
+record counts, with the gap widening as the dataset grows. The reactive
+defense was evaluated against a real poisoning attack on the mutable
+zone's learned index and reliably detected and corrected the resulting
+degradation without materially affecting normal query performance. A
+literature pass across the major databases in the space didn't turn up
+prior work combining a learned index with this kind of runtime defense.
 
-- **40-60% smaller than raw JSON** at realistic scale (thousands of
-  records), improving further as record count grows.
-- **A runtime-reactive defense against learned-index poisoning attacks**:
-  100% detection rate, 0% false positives, full model recovery, median 20
-  queries to detect an attack in progress, across 30 independent trials.
-- Verified against Google Scholar, ACM Digital Library, IEEE Xplore, and
-  arXiv: no prior published work combines a learned index with a
-  reactive/adaptive defense of this kind.
+Full methodology, numbers, and the paper are not published here, this
+section is a summary, not a claim meant to stand on its own.
 
 ## Notice
 
