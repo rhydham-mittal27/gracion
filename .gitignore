@@ -1,0 +1,9 @@
+# This is a private project. Only the public-facing README is tracked in
+# this repository — everything else (source, tests, benchmarks, scripts,
+# the paper, internal logs, referenced literature) is intentionally
+# excluded from version control, not merely hidden by an oversight. See
+# README.md's Notice section.
+*
+
+!.gitignore
+!README.md
